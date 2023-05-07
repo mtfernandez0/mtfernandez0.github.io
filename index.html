@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="dark">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,72 +10,223 @@
     crossorigin="anonymous">
     <link href="styles.css" rel="stylesheet" type="text/css">
     <script src="https://kit.fontawesome.com/01334e3bce.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="index.js"></script>
     <title>Matias Fernandez</title>
 </head>
 <body>
-    <div class="nav">
-        <h2>
-            This is a showcase of some of the projects I've been working on in order to get hands-on 
-            experience as a Java Backend Developer.
-        </h2>
+    <div id="profile">
+        <div>
+            <img src="img/profile.jpeg" alt="my_photo">
+            <h3>Matias Fernandez</h3>
+            <h4>Who am I?</h4>
+            <p>I'm a third year Computer Science student who have developed a strong passion for Java backend 
+                development.</p>
+        </div>
+        <div class="icons">
+            <button type="button" class="btn icon">
+                <a href="https://www.linkedin.com/in/matias-fernandez-383b19215/">
+                <i class="fa-brands fa-linkedin fa-2xl"></i>
+                </a>
+            </button>
+            <button type="button" class="btn icon">
+                <a href="https://github.com/mtfernandez0">
+                    <i class="fa-brands fa-github fa-2xl"></i>
+                </a>
+            </button>
+            <button type="button" class="btn icon" onclick="copyToClipboard()">
+                <input type="hidden" name="email" value="matiasfdez@outlook.com">
+                <i class="far fa-envelope fa-2xl"></i>
+            </button>
+        </div>
+        <div class="alert email-alert">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            Email Copied
+        </div>
     </div>
-    <div id="projects">
-        <div class="project">
-            <img src="img/GameChat.png" alt="photo">
-            <div class="description">
-                <h3>Game Chat</h3>
-                <p>This app will allow you to find people who want to play with you.
-                    You can search for people looking to play a specific game, with the most relevant 
-                    data about them from the game in question, and start a conversation in order to get to 
-                    know each other.</p>
-                <div class="data">
-                    <h4>Tools Used</h4>
-                    <button type="button" class="btn btn-outline-secondary">Java</button>
-                    <button type="button" class="btn btn-outline-secondary">SpringBoot</button>
-                    <button type="button" class="btn btn-outline-secondary">JPA</button>
-                    <button type="button" class="btn btn-outline-secondary">WebSockets</button>
-                    <button type="button" class="btn btn-outline-secondary">PostgreSQL</button>
-                    <button type="button" class="btn btn-outline-secondary">HTML</button>
-                    <button type="button" class="btn btn-outline-secondary">CSS</button>
-                    <button type="button" class="btn btn-outline-secondary">Bootstrap</button>
-                    <h4>Version</h4>
-                    <button type="button" class="btn btn-outline-warning">0.0.1-SNAPSHOT</button>
+    <div id="main-page">
+        <nav id="navbar">
+            <a id="home-page" class="nav-page">About me</a>
+            <a id="proyects-page" class="nav-page">Proyects</a>
+            <a id="studies-page" class="nav-page">Studies</a>
+        </nav>
+
+        <div class="main-view">
+            <div id="home">
+                <h3>
+                    I'm a 22 years old Java Backend Developer and Computer Science student who loves learning about new technologies
+                    and building projects so to enrich my knowledge and be a better programmer at the end of the day.
+                    <br>
+                    I have developed several CRUD applications and have become proficient in Restful web services and SQL.
+                    <br>
+                    <br>
+                    I'm currently building a small chat for gamers with SpringBoot, SQL and other frameworks.
+                </h3>
+            </div>
+        </div>
+
+        <div class="main-view main-view-show">
+            <div id="proyects">
+                <h4>This is a showcase of some of the projects I've been working on in order to get hands-on experience as a 
+                Java Backend Developer.</h4>
+                <div id="projects-list">
+                    <div class="proyect">
+                        <img src="img/GameChat.png" alt="photo">
+                        <div class="project-info">
+                            <h3>GameChat</h3>
+                            <h5>This app will allow you to find people who want to play with you.
+                                You can search for people looking to play a specific game, with the most relevant 
+                                data about them from the game in question, and start a conversation in order to get to 
+                                know each other.</h5>
+                                <div class="tools">
+                                    <button type="button" class="btn btn-outline-secondary">Java</button>
+                                    <button type="button" class="btn btn-outline-secondary">SpringBoot</button>
+                                    <button type="button" class="btn btn-outline-secondary">JPA</button>
+                                    <button type="button" class="btn btn-outline-secondary">WebSockets</button>
+                                    <button type="button" class="btn btn-outline-secondary">PostgreSQL</button>
+                                    <button type="button" class="btn btn-outline-secondary">HTML</button>
+                                    <button type="button" class="btn btn-outline-secondary">CSS</button>
+                                    <button type="button" class="btn btn-outline-secondary">Bootstrap</button>
+                                </div>
+                            <button id="gamechat-about" type="button" class="more-about btn btn-success">More about</button>
+                            <button type="button" class="btn icon">
+                                <a href="https://github.com/mtfernandez0/GameChat">
+                                    <i class="fa-brands fa-github fa-2xl"></i>
+                                </a>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="proyect">
+                        <img src="img/SchoolMS.png" alt="photo">
+                        <div class="project-info">
+                            <h3>School M.S.</h3>
+                            <h5>App created to solve the problem of disorganization in schools by having to assign a 
+                                classroom or check if there is one available.</h5>
+                            <div class="tools">
+                                <button type="button" class="btn btn-outline-secondary">Java</button>
+                                <button type="button" class="btn btn-outline-secondary">SpringBoot</button>
+                                <button type="button" class="btn btn-outline-secondary">JPA</button>
+                                <button type="button" class="btn btn-outline-secondary">Mysql</button>
+                                <button type="button" class="btn btn-outline-secondary">HTML</button>
+                                <button type="button" class="btn btn-outline-secondary">CSS</button>
+                                <button type="button" class="btn btn-outline-secondary">Bootstrap</button>
+                            </div>
+                            <button id="sms-about" type="button" class="more-about btn btn-success">More about</button>
+                            <button type="button" class="btn icon">
+                                <a href="https://github.com/mtfernandez0/SchoolMS/tree/main">
+                                    <i class="fa-brands fa-github fa-2xl"></i>
+                                </a>
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="project">
-            <img src="img/SchoolMS.png" alt="photo">
-            <div class="description">
-                <h3>School M.S.</h3>
-                <p>App created to solve the problem of disorganization in schools by having to assign a 
-                    classroom or check if there is one available.</p>
-                <div class="data">
-                    <h4>Tools Used</h4>
-                    <button type="button" class="btn btn-outline-secondary">Java</button>
-                    <button type="button" class="btn btn-outline-secondary">SpringBoot</button>
-                    <button type="button" class="btn btn-outline-secondary">JPA</button>
-                    <button type="button" class="btn btn-outline-secondary">Mysql</button>
-                    <button type="button" class="btn btn-outline-secondary">HTML</button>
-                    <button type="button" class="btn btn-outline-secondary">CSS</button>
-                    <button type="button" class="btn btn-outline-secondary">Bootstrap</button>
-                    <h4>Version</h4>
-                    <button type="button" class="btn btn-outline-success">1.0.0</button>
+
+        <div class="main-view">
+            <div id="studies">
+                <h3>Universidad De Buenos Aires Licenciatura en Ciencias De La Computación</h3>
+                <h5>&nbsp;&nbsp;&nbsp;2019 - Present, third year</h5>
+                </br>
+                <h3>Escuela Estatal Secundaria Técnica Nº1 Hipólito Bouchard</h3>
+                <h5>&nbsp;&nbsp;&nbsp;2012 - 2018</h5>
+            </div>
+        </div>
+
+        <div class="main-view">
+            <div class="proyect-page">
+                <div id="gamechat" class="proyect-about">
+                    <h1>GameChat</h1>
+                    </br>
+                    <div>
+                        <img src="img/GameChat.png" alt="photo">
+                        <h2>This app will allow you to find people who want to play with you.
+                        </br>
+                        You can search for people looking to play a specific game, with the most relevant 
+                        data about them from the game in question, and start a conversation in order to get to 
+                        know each other.</h2>
+                        <br><br>
+                        <h4>The app is in development.</h4>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="info">
-        <h4>Contact</h4>
-        <button type="button" class="btn btn-outline-primary">
-            <a href="https://www.linkedin.com/in/matias-fernandez-383b19215/">
-            <i class="fa-brands fa-linkedin fa-2xl"></i>
-            </a>
-        </button>
-        <button type="button" class="btn btn-outline-light">
-            <a href="https://github.com/mtfernandez0">
-                <i class="fa-brands fa-github fa-2xl"></i>
-            </a>
-        </button>
+
+        <div class="main-view">
+            <div id="sms" class="proyect-about">
+                <h1>School Management System</h1>
+                </br>
+                <div>
+                    <img src="img/SchoolMS.png" alt="SchoolMS.png">
+                    <h3>App created to solve the problem of disorganization in schools by having to assign 
+                    a classroom or check if there is one available.
+                    </br>
+                    </br>
+                    This project was designed with a continuous release methodology in order to constantly 
+                    improve the application and carry out tests with possible users.</h3>
+                    </br>
+                </div>
+
+                <div>
+                    <h2>Features</h2>
+                    <h3>The app is designed so that one single user can manage write operations like editing,
+                        adding or deleting an entry. Any other user will only be able to read them.
+                    </br>
+                    </br>
+                    <img src="img/SMSRegister.png" alt="SMSRegister">
+                    For both scenarios, one must first create an account.<br><br>
+                    The user who can control the write operations must have some kind of identification so
+                    that the app knows whether the user can access specific endpoints or not.<br><br>
+                    By default, the app will expect the user who can access these resources to have an
+                    email with a specific prefix. 
+                    </h3>
+                    <h3></h3>
+                </div>
+
+                <div>
+                    <h2>Details</h2>
+                    <h3>
+                        To build this application I used the Spring Boot framework for an easy setup.<br>
+                        I also used the Spring Security module to add authentication and authorization
+                        mechanisms.<br>
+                        To maintain user data and classroom table entries, I used MySQL database together with
+                        JPA.<br>
+                        And for the frontend I used Thymeleaf to create a user-friendly interface for the
+                        CRUD operations.
+                    </h3>
+                </div>
+
+                <div>
+                    <h2>Challenges</h2>
+                    <h3>
+                        This was one of the first backend projects I developed using Java, so there were a
+                        lot of things, like frameworks and modules, that I did not know anything about.
+                        <br><br>
+                        Security and authorization were the main problems I had to deal with, 
+                        establishing what a user can and cannot access and how to 
+                        implement this was both as problematic as challenging, and ended up being fun.
+                        <br><br>
+                        But in the end, through documentation and online tutorials I was able to finish 
+                        create this application that I really enjoyed developing.
+                    </h3>
+                </div>
+
+                <div>
+                    <h2>What's next</h2>
+                    <h3>
+                        The project can be extended and have more capabilities, 
+                        a couple of things to consider for example: <br><br>
+                        <ul>
+                            <li>Deciding how a user can have access to write operations(it could be by username 
+                                instead of email).</li>
+                            <li>New tables related to the classroom table can be added so that more information
+                                can be seen.
+                            </li>
+                        </ul>
+                    </h3>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
