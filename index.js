@@ -22,7 +22,7 @@ $(function (){
         }
     })
 
-    const aboutViews = [...document.querySelectorAll('.proyect-about')]
+    const aboutViews = [...document.querySelectorAll('.project-about')]
 
     $(".more-about").on("click", (e) => {
         var str = e.target.id.split('-')[0]
