@@ -90,7 +90,7 @@ nav a:hover{
     display: block;
 }
 
-#proyects, #home, #contact, #studies{
+#projects, #home, #contact, #studies{
     margin: 20px;
     height: calc(100vh - 130px);
 }
@@ -100,7 +100,7 @@ nav a:hover{
     text-align: center;
 }
 
-#proyects{
+#projects{
     display: grid;
     grid-template-rows: auto 1fr;
 }
@@ -112,7 +112,7 @@ nav a:hover{
     flex-direction: column;
 }
 
-.proyect{
+.project{
     margin-top: 20px;
     background-color: #003351;
 
@@ -121,7 +121,7 @@ nav a:hover{
     grid-gap: 20px;
 }
 
-.proyect img{
+.project img{
     width: 100%;
     height: 100%;
 
@@ -132,21 +132,21 @@ nav a:hover{
     padding: 15px;
 }
 
-.proyect-about{
+.project-about{
     margin: 20px;
     height: calc(100vh - 130px);
 
     overflow: auto;
 }
 
-.proyect-about div{
+.project-about div{
     margin-top: 20px;
     background-color: #003351;
 
     overflow: hidden;
 }
 
-.proyect-about img{
+.project-about img{
     width: 600px;
     height: 350px;
     background-color: #003351;
